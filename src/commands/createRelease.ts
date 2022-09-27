@@ -57,7 +57,7 @@ export const createRelease = async ({
   });
 
   // The release version is considered to be a PR made via gh-calver-release,
-  // and the tentative release version is adjusted to the timing of the release.
+  // and the tentative release version is finalized to the timing of the release.
   if (prBody?.includes(BANNER)) {
     await updatePullRequestTitle(octokit, {
       owner,
