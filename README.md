@@ -110,3 +110,8 @@ https://github.com/banyan/gh-calver-release-example
 
 - Release PR: https://github.com/banyan/gh-calver-release-example/pull/3
 - Release: https://github.com/banyan/gh-calver-release-example/releases/tag/2022.09.27.0
+
+## Caveats
+
+- When you run `gh-calver-release create:pr`, both base branch and head branch must be existed.
+- For example, suppose that a release PR is created and then merged one day later. The version of the release PR title at that time is temporary, and the correct version will be set at the time of the actual release. The title of the Pull Request will also be updated.
