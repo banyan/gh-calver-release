@@ -5,9 +5,9 @@
 There are cases where you want to release a website or application with [calendar versioning](https://calver.org/).
 This tool can be used in such cases and is supposed to be used with GitHub Actions.
 
-You can run `gh-calver-release create:pr` on any event such as `workflow_dispatch`. This will create a pull request for release. The description of the Pull Request will be created using the [Automatically generated release notes](https://docs.github.com/en//repositories/releasing-projects-on-github/automatically-generated-release-notes) feature.
+You can run `gh-calver-release create:pr` on any event such as `workflow_dispatch`. This will create a pull request for release. The description of the Pull Request will be created using the [Automatically generated release notes](https://docs.github.com/en//repositories/releasing-projects-on-github/automatically-generated-release-notes) feature. You can also customize the description using `.github/release.yml`. See further [configuration options](https://docs.github.com/en//repositories/releasing-projects-on-github/automatically-generated-release-notes#configuration-options).
 
-The `gh-calver-release create:release` is executed when the release PR is merged. In fact, releases are also created when a hotfix enters the base branch directly.
+The `gh-calver-release create:release` is executed when the release PR is merged. In fact, releases are also created when a hotfix enters the base branch directly. This command will create a release with the tag of calendar versioning.
 
 
 ## Usage
