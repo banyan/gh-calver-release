@@ -1,6 +1,12 @@
-# gh-calver-release :spiral_calendar:
+<div class="hero" align="center">
+
+:spiral_calendar:
+
+# gh-calver-release
 
 >Create a Release PR and a Release using calver
+
+</div>
 
 There are cases where you want to release a website or application with [calendar versioning](https://calver.org/).
 This tool can be used in such cases and is supposed to be used with GitHub Actions. Inspired from [git-pr-release](https://github.com/x-motemen/git-pr-release) and [github-pr-release](https://github.com/uiur/github-pr-release).
