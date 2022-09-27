@@ -75,7 +75,7 @@ yargs
         .option('repo', {
           type: 'string',
           describe:
-            'The name of the owner and repository. The name is not case sensitive.',
+            'The name of the owner and repository. The name is not case sensitive. (e.g. owner/repo)',
           demandOption: true,
         })
         .option('target_commitish', {
