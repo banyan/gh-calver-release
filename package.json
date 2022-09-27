@@ -18,7 +18,7 @@
     "build:common": "tsc",
     "build:esm": "tsc -p tsconfig.esm.json",
     "typecheck": "tsc --noEmit",
-    "release": "np"
+    "release": "yarn publish"
   },
   "dependencies": {
     "@octokit/core": "^4.0.5",
