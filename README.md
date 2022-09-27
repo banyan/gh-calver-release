@@ -103,3 +103,10 @@ Examples:
   gh-calver-release create:release --repo "banyan/gh-calver-release" --target_commitish "main" --pull_number 1                                                        Specify only required argument usage
   gh-calver-release create:release  --repo "banyan/gh-calver-release" --target_commitish "main" --pull_number 1 --format "yyyy.0m.0d.minor" --level "calendar.minor"  Specify additional format and level usage
 ```
+
+## Example
+
+https://github.com/banyan/gh-calver-release-example
+
+- Release PR: https://github.com/banyan/gh-calver-release-example/pull/3
+- Release: https://github.com/banyan/gh-calver-release-example/releases/tag/2022.09.27.0
