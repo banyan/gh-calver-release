@@ -12,7 +12,6 @@ import { getOctokit } from '../github/octokit';
 import { buildPRTitle } from '../utils/buildPRTitle';
 
 export type CreateReleasePayload = {
-  owner: string;
   repo: string;
   target_commitish: string;
   pull_number: number;
@@ -27,7 +26,7 @@ export const createRelease = async ({
   pull_number: pullNumber,
   format: _format,
   level: _level,
-}: CreateReleasePayload) => {
+}: CreateReleasePayload & { owner: string }) => {
   const octokit = getOctokit();
   const format = _format || DEFAULT_FORMAT;
   const level = _level || DEFAULT_LEVEL;

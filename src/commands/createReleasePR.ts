@@ -13,7 +13,6 @@ import { getOctokit } from '../github/octokit';
 import { buildPRTitle } from '../utils/buildPRTitle';
 
 export type CreateReleasePRPayload = {
-  owner: string;
   repo: string;
   base: string;
   head: string;
@@ -28,7 +27,7 @@ export const createReleasePR = async ({
   head,
   format: _format,
   level: _level,
-}: CreateReleasePRPayload) => {
+}: CreateReleasePRPayload & { owner: string }) => {
   const octokit = getOctokit();
   const format = _format || DEFAULT_FORMAT;
   const level = _level || DEFAULT_LEVEL;

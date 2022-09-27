@@ -16,12 +16,6 @@ yargs
     'Create release pull request',
     (yargs: Argv): Argv<CreateReleasePRPayload> => {
       return yargs
-        .option('owner', {
-          type: 'string',
-          describe:
-            'The account owner of the repository. The name is not case sensitive.',
-          demandOption: true,
-        })
         .option('repo', {
           type: 'string',
           describe:
@@ -52,17 +46,25 @@ yargs
         })
         .example([
           [
-            '$0 create:pr --owner "banyan" --repo "gh-calver-release" --base "main" --head "develop"',
+            '$0 create:pr --repo "banyan/gh-calver-release" --base "main" --head "develop"',
             'Specify only required argument usage',
           ],
           [
-            '$0 create:pr --owner "banyan" --repo "gh-calver-release" --base "main" --head "develop" --format "yyyy.0m.0d.minor" --level "calendar.minor"',
+            '$0 create:pr --repo "banyan/gh-calver-release" --base "main" --head "develop" --format "yyyy.0m.0d.minor" --level "calendar.minor"',
             'Specify additional format and level usage',
           ],
         ]);
     },
     (args: Arguments<CreateReleasePRPayload>): void => {
-      createReleasePR(args);
+      const [_owner, _repo] = args.repo.split('/');
+      if (!_owner || !_repo) {
+        throw new Error('Invalid repo name');
+      }
+      createReleasePR({
+        ...args,
+        owner: _owner,
+        repo: _repo,
+      });
     },
   )
   .command(
@@ -70,16 +72,10 @@ yargs
     'Create release',
     (yargs: Argv): Argv<CreateReleasePayload> => {
       return yargs
-        .option('owner', {
-          type: 'string',
-          describe:
-            'The account owner of the repository. The name is not case sensitive.',
-          demandOption: true,
-        })
         .option('repo', {
           type: 'string',
           describe:
-            'The name of the repository. The name is not case sensitive.',
+            'The name of the owner and repository. The name is not case sensitive.',
           demandOption: true,
         })
         .option('target_commitish', {
@@ -105,17 +101,25 @@ yargs
         })
         .example([
           [
-            '$0 create:release --owner "banyan" --repo "gh-calver-release" --target_commitish "main" --pull_number 1',
+            '$0 create:release --repo "banyan/gh-calver-release" --target_commitish "main" --pull_number 1',
             'Specify only required argument usage',
           ],
           [
-            '$0 create:release --owner "banyan" --repo "gh-calver-release" --target_commitish "main" --pull_number 1 --format "yyyy.0m.0d.minor" --level "calendar.minor"',
+            '$0 create:release  --repo "banyan/gh-calver-release" --target_commitish "main" --pull_number 1 --format "yyyy.0m.0d.minor" --level "calendar.minor"',
             'Specify additional format and level usage',
           ],
         ]);
     },
     (args: Arguments<CreateReleasePayload>): void => {
-      createRelease(args);
+      const [_owner, _repo] = args.repo.split('/');
+      if (!_owner || !_repo) {
+        throw new Error('Invalid repo name');
+      }
+      createRelease({
+        ...args,
+        owner: _owner,
+        repo: _repo,
+      });
     },
   )
   // .command('init', 'Generate GitHub action templates') TODO: implement
