@@ -14,6 +14,8 @@ The `gh-calver-release create:release` is executed when the release PR is merged
 
 ### `gh-calver-release create:pr`
 
+Create a file named `.github/workflows/create-release-pr.yml`. (You can change the file name if you like.)
+
 ```yml
 name: Create Release PR
 on:
@@ -32,6 +34,8 @@ jobs:
 ```
 
 ### `gh-calver-release create:release`
+
+Create a file named `.github/workflows/create-release.yml`. (You can change the file name if you like.)
 
 ```yml
 name: Create Release
