@@ -12,6 +12,10 @@
   "bin": {
     "gh-calver-release": "dist/cli/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/banyan/gh-calver-release.git"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "run-p build:*",
