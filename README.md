@@ -3,7 +3,7 @@
 >Create a Release PR and a Release using calver
 
 There are cases where you want to release a website or application with [calendar versioning](https://calver.org/).
-This tool can be used in such cases and is supposed to be used with GitHub Actions.
+This tool can be used in such cases and is supposed to be used with GitHub Actions. Inspired from [git-pr-release](https://github.com/x-motemen/git-pr-release) and [github-pr-release](https://github.com/uiur/github-pr-release).
 
 You can run `gh-calver-release create:pr` on any event such as `workflow_dispatch`. This will create a pull request for release. The description of the Pull Request will be created using the [Automatically generated release notes](https://docs.github.com/en//repositories/releasing-projects-on-github/automatically-generated-release-notes) feature. You can also customize the description using `.github/release.yml`. See further [configuration options](https://docs.github.com/en//repositories/releasing-projects-on-github/automatically-generated-release-notes#configuration-options).
 
