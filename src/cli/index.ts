@@ -105,7 +105,7 @@ yargs
             'Specify only required argument usage',
           ],
           [
-            '$0 create:release  --repo "banyan/gh-calver-release" --target_commitish "main" --pull_number 1 --format "yyyy.0m.0d.minor" --level "calendar.minor"',
+            '$0 create:release --repo "banyan/gh-calver-release" --target_commitish "main" --pull_number 1 --format "yyyy.0m.0d.minor" --level "calendar.minor"',
             'Specify additional format and level usage',
           ],
         ]);
